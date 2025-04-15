@@ -18,11 +18,24 @@ namespace IsYonetimSistemi
         {
             try
             {
-                var builder = new ConfigurationBuilder()
-                    .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-                    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+                var builder = new ConfigurationBuilder().SetBasePath(AppDomain.CurrentDomain.BaseDirectory);
+
+                
+                if (File.Exists("appsettings.json"))
+                {
+                    builder.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+                }
+                else if (File.Exists("appsettings.example.json"))
+                {
+                    builder.AddJsonFile("appsettings.example.json", optional: false, reloadOnChange: true);
+                }
+                else
+                {
+                    throw new FileNotFoundException("appsettings.json veya appsettings.example.json dosyası bulunamadı.");
+                }
 
                 _configuration = builder.Build();
+
             }
             catch (Exception ex)
             {
