@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            projelerbtn = new Button();
             exitbtn = new Button();
             pictureBox1 = new PictureBox();
             calisansayisi = new Label();
@@ -36,6 +37,7 @@
             calisanlarbtn = new Button();
             havadurumu = new Label();
             pictureBox2 = new PictureBox();
+            saveFileDialog1 = new SaveFileDialog();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -44,6 +46,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(90, 59, 153);
+            panel1.Controls.Add(projelerbtn);
             panel1.Controls.Add(exitbtn);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(calisansayisi);
@@ -54,6 +57,19 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(171, 577);
             panel1.TabIndex = 0;
+            // 
+            // projelerbtn
+            // 
+            projelerbtn.BackColor = Color.White;
+            projelerbtn.FlatStyle = FlatStyle.Flat;
+            projelerbtn.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            projelerbtn.Location = new Point(3, 151);
+            projelerbtn.Name = "projelerbtn";
+            projelerbtn.Size = new Size(165, 44);
+            projelerbtn.TabIndex = 7;
+            projelerbtn.Text = "Projeler";
+            projelerbtn.UseVisualStyleBackColor = false;
+            projelerbtn.Click += projelerbtn_Click;
             // 
             // exitbtn
             // 
@@ -71,7 +87,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.employee;
-            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Location = new Point(3, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(36, 50);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -81,20 +97,20 @@
             // calisansayisi
             // 
             calisansayisi.AutoSize = true;
-            calisansayisi.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            calisansayisi.Location = new Point(82, 33);
+            calisansayisi.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            calisansayisi.Location = new Point(134, 18);
             calisansayisi.Name = "calisansayisi";
-            calisansayisi.Size = new Size(17, 20);
+            calisansayisi.Size = new Size(15, 17);
             calisansayisi.TabIndex = 0;
             calisansayisi.Text = "0";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            label1.Location = new Point(45, 8);
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            label1.Location = new Point(45, 19);
             label1.Name = "label1";
-            label1.Size = new Size(104, 20);
+            label1.Size = new Size(83, 15);
             label1.TabIndex = 4;
             label1.Text = "Çalışan Sayısı :";
             // 
@@ -103,7 +119,7 @@
             calisanlarbtn.BackColor = Color.White;
             calisanlarbtn.FlatStyle = FlatStyle.Flat;
             calisanlarbtn.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            calisanlarbtn.Location = new Point(3, 59);
+            calisanlarbtn.Location = new Point(3, 87);
             calisanlarbtn.Name = "calisanlarbtn";
             calisanlarbtn.Size = new Size(165, 44);
             calisanlarbtn.TabIndex = 0;
@@ -163,5 +179,7 @@
         private Label havadurumu;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
+        private SaveFileDialog saveFileDialog1;
+        private Button projelerbtn;
     }
 }

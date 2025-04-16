@@ -8,48 +8,61 @@ namespace IsYonetimSistemi
     public partial class Form1 : Form
     {
         public string _databasePath = "database.db";
-
-        
-
-        
-
         public Form1()
         {
             InitializeComponent();
             veriTabaniOlustur();
             CalisanSayisiAl();
-
         }
-
         public async void Form1_Load(object sender, EventArgs e)
         {
-            await GetWeatherDataAsync();
+            await HavaDurumuAl();
         }
-
         private void veriTabaniOlustur()
         {
             if (!File.Exists(_databasePath))
             {
-
                 using (var connection = new SqliteConnection($"Data Source={_databasePath}"))
                 {
                     connection.Open();
 
 
                     string createCalisanlar = @"CREATE TABLE IF NOT EXISTS Calisanlar (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            adsoyad TEXT NOT NULL,
-            pozisyon TEXT NOT NULL,
-            maas REAL NOT NULL,
-            telefon TEXT NOT NULL,
-            gtarih TEXT NOT NULL,
-            cinsiyet INTEGER
-        )";
+                                                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                                adsoyad TEXT NOT NULL,
+                                                pozisyon TEXT NOT NULL,
+                                                maas REAL NOT NULL,
+                                                telefon TEXT NOT NULL,
+                                                gtarih TEXT NOT NULL,
+                                                cinsiyet INTEGER)";
 
                     string createPozisyonlar = @"CREATE TABLE IF NOT EXISTS Pozisyonlar (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            Pozisyonadi TEXT NOT NULL
-        )";
+                                                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                                Pozisyonadi TEXT NOT NULL)";
+
+                    string createProjeler = @"CREATE TABLE IF NOT EXISTS Projeler (
+                                              id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                              ProjeAdi TEXT NOT NULL,
+                                              Aciklama TEXT,
+                                              Bastarihi DATE,
+                                              Bitistarihi DATE,
+                                              Musteriid INTEGER,  
+                                              FOREIGN KEY (Musteriid) REFERENCES Musteriler(id))";
+
+                    string createProjeatamasi = @"CREATE TABLE IF NOT EXISTS Projeatamasi (
+                                                  Calisanid INTEGER,
+                                                  Projeid INTEGER,
+                                                  Rol TEXT,
+                                                  AtamaTarihi DATE,
+                                                  PRIMARY KEY (Calisanid, Projeid),
+                                                  FOREIGN KEY (Calisanid) REFERENCES Calisanlar(id) ON DELETE CASCADE,
+                                                  FOREIGN KEY (Projeid) REFERENCES Projeler(id) ON DELETE CASCADE)";
+
+                    string createMusteriler = @"CREATE TABLE IF NOT EXISTS Musteriler(
+                                                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                                ad TEXT,
+                                                iletisimbilgileri TEXT,
+                                                adres TEXT)";
 
                     using (var command = new SqliteCommand(createCalisanlar, connection))
                     {
@@ -57,6 +70,21 @@ namespace IsYonetimSistemi
                     }
 
                     using (var command = new SqliteCommand(createPozisyonlar, connection))
+                    {
+                        command.ExecuteNonQuery();
+                    }
+
+                    using (var command = new SqliteCommand(createProjeler, connection))
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    
+                    using (var command = new SqliteCommand(createProjeatamasi,connection))
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    
+                    using (var command = new SqliteCommand(createMusteriler, connection))
                     {
                         command.ExecuteNonQuery();
                     }
@@ -108,7 +136,7 @@ namespace IsYonetimSistemi
                 }
             }
         }
-        public async Task GetWeatherDataAsync()
+        public async Task HavaDurumuAl()
         {
             var settings = new SettingsHelper();
             string api = settings.apiAl();
@@ -120,8 +148,8 @@ namespace IsYonetimSistemi
                 try
                 {
                     string myurl = $"{url}?q={sehir}&appid={api}&units=metric&lang=tr";
-                   
-                    HttpResponseMessage response = await client.GetAsync(myurl); 
+
+                    HttpResponseMessage response = await client.GetAsync(myurl);
 
                     if (response.IsSuccessStatusCode)
                     {
@@ -143,28 +171,34 @@ namespace IsYonetimSistemi
                 }
             }
         }
-
+        private void projelerbtn_Click(object sender, EventArgs e)
+        {
+            ProjelerEkrani projelerEkrani = new ProjelerEkrani();
+            projelerEkrani.Show();
+        }
         public class WeatherApi
         {
             public string? api { get; set; }
-            public string? apiurl { get; set; }   
+            public string? apiurl { get; set; }
         }
         public class WeatherResponse
         {
             public string? Name { get; set; }
-            public MainWeather? Main { get; set; } 
+            public MainWeather? Main { get; set; }
             public Weather[]? Weather { get; set; }
         }
 
         public class MainWeather
         {
-            public float Temp { get; set; } 
+            public float Temp { get; set; }
         }
 
         public class Weather
         {
-            public string? Description { get; set; } 
+            public string? Description { get; set; }
         }
+
+       
     }
 
 }

@@ -113,6 +113,16 @@ namespace IsYonetimSistemi.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap Çalışanlar1 {
+            get {
+                object obj = ResourceManager.GetObject("Çalışanlar1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap calisanlistesilabel {
             get {
                 object obj = ResourceManager.GetObject("calisanlistesilabel", resourceCulture);
@@ -166,6 +176,16 @@ namespace IsYonetimSistemi.Properties {
         internal static System.Drawing.Bitmap pozisyonlistesilabel {
             get {
                 object obj = ResourceManager.GetObject("pozisyonlistesilabel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap Projeler {
+            get {
+                object obj = ResourceManager.GetObject("Projeler", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

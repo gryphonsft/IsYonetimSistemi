@@ -323,7 +323,7 @@
             // panel4
             // 
             panel4.BackColor = Color.Transparent;
-            panel4.BackgroundImage = Properties.Resources.toppanel;
+            panel4.BackgroundImage = Properties.Resources.Çalışanlar1;
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(0, 0);
             panel4.Name = "panel4";
