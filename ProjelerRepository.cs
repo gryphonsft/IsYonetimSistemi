@@ -10,7 +10,7 @@ namespace IsYonetimSistemi
     {
         //DataTable ile Proje listeleme ekle.
         //Proje durumunu raporlama sayfasında belirlemek.
-        public void ProjeOluştur() 
+        public void ProjeEkle(string ProjeAdi, string Aciklama, string Bastarihi, string Bitistarihi,int Musteriid) 
         {
         
         }

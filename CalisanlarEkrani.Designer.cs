@@ -223,11 +223,14 @@
             // 
             // calisanlardata
             // 
+            calisanlardata.AllowUserToAddRows = false;
+            calisanlardata.AllowUserToDeleteRows = false;
             calisanlardata.BackgroundColor = Color.Silver;
             calisanlardata.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             calisanlardata.Location = new Point(681, 119);
             calisanlardata.Name = "calisanlardata";
-            calisanlardata.Size = new Size(645, 292);
+            calisanlardata.ReadOnly = true;
+            calisanlardata.Size = new Size(645, 294);
             calisanlardata.TabIndex = 1;
             // 
             // panel2

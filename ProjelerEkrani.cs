@@ -17,9 +17,15 @@ namespace IsYonetimSistemi
             InitializeComponent();
         }
 
+        private void ProjelerEkrani_Load(object sender, EventArgs e)
+        {
+
+        }
         private void geridonbtn_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        
     }
 }
