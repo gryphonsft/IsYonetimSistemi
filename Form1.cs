@@ -60,9 +60,12 @@ namespace IsYonetimSistemi
 
                     string createMusteriler = @"CREATE TABLE IF NOT EXISTS Musteriler(
                                                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                                                ad TEXT,
-                                                iletisimbilgileri TEXT,
-                                                adres TEXT)";
+                                                Ad TEXT,
+                                                Iletisim TEXT,
+                                                Eklenmetarihi DATE,
+                                                Aciklama TEXT)";
+
+
 
                     using (var command = new SqliteCommand(createCalisanlar, connection))
                     {
@@ -78,16 +81,17 @@ namespace IsYonetimSistemi
                     {
                         command.ExecuteNonQuery();
                     }
-                    
-                    using (var command = new SqliteCommand(createProjeatamasi,connection))
+
+                    using (var command = new SqliteCommand(createProjeatamasi, connection))
                     {
                         command.ExecuteNonQuery();
                     }
-                    
+
                     using (var command = new SqliteCommand(createMusteriler, connection))
                     {
                         command.ExecuteNonQuery();
                     }
+
                 }
 
                 MessageBox.Show("Tablolar kontrol edildi, eksikler tamamlandý.");

@@ -11,8 +11,8 @@ namespace IsYonetimSistemi
     internal class ProjelerRepository
     {
         private readonly DatabaseHelper _dbHelper = new DatabaseHelper();
-        DataTable dtt = new DataTable();
-        //DataTable ile Proje listeleme ekle.
+        
+        
         //Proje durumunu raporlama sayfasında belirlemek.
         public void ProjeEkle(string ProjeAdi, string Aciklama, string Bastarihi, string Bitistarihi,int? Musteriid) 
         {
@@ -38,6 +38,7 @@ namespace IsYonetimSistemi
         }
         public DataTable ProjeleriListele()
         {
+            DataTable dtt = new DataTable();
 
             using (var connection = new SqliteConnection("Data Source=database.db"))
             {
@@ -50,23 +51,10 @@ namespace IsYonetimSistemi
                 {
                     dtt.Load(reader);
                 }
-
-
             }
             return dtt;
         }
-        public bool MusteriVarMi(int id)
-        {
-            using (var conn = new SqliteConnection("Data Source=database.db"))
-            {
-                conn.Open();
-                var cmd = new SqliteCommand("SELECT COUNT(*) FROM Musteriler WHERE ID = @id", conn);
-                cmd.Parameters.AddWithValue("@id", id);
-
-                long count = (long)cmd.ExecuteScalar();
-                return count > 0;
-            }
-        }
+        
         public void ProjeSilme()
         {
             
