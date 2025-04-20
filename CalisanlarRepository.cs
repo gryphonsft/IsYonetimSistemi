@@ -11,6 +11,7 @@ namespace IsYonetimSistemi
     class CalisanlarRepository
     {
         private readonly DatabaseHelper _dbHelper = new DatabaseHelper();
+        
 
         public void CalisanEkle(string adsoyad, string pozisyon, string maas, string telefon, string gtarih, int cinsiyet)
         {
@@ -37,7 +38,7 @@ namespace IsYonetimSistemi
             });
         }
 
-        public DataTable CalisanlariYukle()
+        public DataTable CalisanlariListele()
         {
             DataTable dt = new DataTable();
 
@@ -57,7 +58,7 @@ namespace IsYonetimSistemi
             }
             return dt;
         }
-        public DataTable PozisyonlariYukle()
+        public DataTable PozisyonlariListele()
         {
             DataTable dt = new DataTable();
 

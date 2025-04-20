@@ -32,6 +32,7 @@
             geridonbtn = new Button();
             panel4 = new Panel();
             panel1 = new Panel();
+            projeaditxtbox = new TextBox();
             projeeklebtn = new Button();
             musteriidtxtbox = new TextBox();
             bitistarihidate = new DateTimePicker();
@@ -43,18 +44,17 @@
             label2 = new Label();
             label1 = new Label();
             panel2 = new Panel();
+            projeatamabtn = new Button();
+            atarihidate = new DateTimePicker();
+            rolbox = new ComboBox();
+            projebox = new ComboBox();
+            calisanbox = new ComboBox();
+            label9 = new Label();
+            label8 = new Label();
+            label7 = new Label();
+            label6 = new Label();
             projelerdata = new DataGridView();
             dataGridView2 = new DataGridView();
-            projeaditxtbox = new TextBox();
-            label6 = new Label();
-            label7 = new Label();
-            label8 = new Label();
-            label9 = new Label();
-            calisanbox = new ComboBox();
-            projebox = new ComboBox();
-            rolbox = new ComboBox();
-            atarihidate = new DateTimePicker();
-            projeatamabtn = new Button();
             panel3.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -113,6 +113,13 @@
             panel1.Size = new Size(409, 294);
             panel1.TabIndex = 20;
             // 
+            // projeaditxtbox
+            // 
+            projeaditxtbox.Location = new Point(167, 30);
+            projeaditxtbox.Name = "projeaditxtbox";
+            projeaditxtbox.Size = new Size(194, 23);
+            projeaditxtbox.TabIndex = 21;
+            // 
             // projeeklebtn
             // 
             projeeklebtn.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
@@ -122,6 +129,7 @@
             projeeklebtn.TabIndex = 20;
             projeeklebtn.Text = "Kaydet";
             projeeklebtn.UseVisualStyleBackColor = true;
+            projeeklebtn.Click += projeeklebtn_Click;
             // 
             // musteriidtxtbox
             // 
@@ -220,6 +228,87 @@
             panel2.Size = new Size(409, 240);
             panel2.TabIndex = 21;
             // 
+            // projeatamabtn
+            // 
+            projeatamabtn.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            projeatamabtn.Location = new Point(167, 200);
+            projeatamabtn.Name = "projeatamabtn";
+            projeatamabtn.Size = new Size(194, 37);
+            projeatamabtn.TabIndex = 22;
+            projeatamabtn.Text = "Kaydet";
+            projeatamabtn.UseVisualStyleBackColor = true;
+            // 
+            // atarihidate
+            // 
+            atarihidate.Location = new Point(167, 160);
+            atarihidate.Name = "atarihidate";
+            atarihidate.Size = new Size(194, 23);
+            atarihidate.TabIndex = 31;
+            // 
+            // rolbox
+            // 
+            rolbox.FormattingEnabled = true;
+            rolbox.Location = new Point(167, 120);
+            rolbox.Name = "rolbox";
+            rolbox.Size = new Size(194, 23);
+            rolbox.TabIndex = 30;
+            // 
+            // projebox
+            // 
+            projebox.FormattingEnabled = true;
+            projebox.Location = new Point(167, 80);
+            projebox.Name = "projebox";
+            projebox.Size = new Size(194, 23);
+            projebox.TabIndex = 29;
+            // 
+            // calisanbox
+            // 
+            calisanbox.FormattingEnabled = true;
+            calisanbox.Location = new Point(167, 40);
+            calisanbox.Name = "calisanbox";
+            calisanbox.Size = new Size(194, 23);
+            calisanbox.TabIndex = 28;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            label9.Location = new Point(46, 162);
+            label9.Name = "label9";
+            label9.Size = new Size(95, 21);
+            label9.TabIndex = 27;
+            label9.Text = "Atama tarihi";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            label8.Location = new Point(46, 122);
+            label8.Name = "label8";
+            label8.Size = new Size(33, 21);
+            label8.TabIndex = 26;
+            label8.Text = "Rol";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            label7.Location = new Point(45, 42);
+            label7.Name = "label7";
+            label7.Size = new Size(108, 21);
+            label7.TabIndex = 25;
+            label7.Text = "Çalışan seçimi";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            label6.Location = new Point(46, 82);
+            label6.Name = "label6";
+            label6.Size = new Size(46, 21);
+            label6.TabIndex = 24;
+            label6.Text = "Proje";
+            // 
             // projelerdata
             // 
             projelerdata.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -235,94 +324,6 @@
             dataGridView2.Name = "dataGridView2";
             dataGridView2.Size = new Size(645, 240);
             dataGridView2.TabIndex = 23;
-            // 
-            // projeaditxtbox
-            // 
-            projeaditxtbox.Location = new Point(167, 30);
-            projeaditxtbox.Name = "projeaditxtbox";
-            projeaditxtbox.Size = new Size(194, 23);
-            projeaditxtbox.TabIndex = 21;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            label6.Location = new Point(46, 82);
-            label6.Name = "label6";
-            label6.Size = new Size(46, 21);
-            label6.TabIndex = 24;
-            label6.Text = "Proje";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            label7.Location = new Point(45, 42);
-            label7.Name = "label7";
-            label7.Size = new Size(108, 21);
-            label7.TabIndex = 25;
-            label7.Text = "Çalışan seçimi";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            label8.Location = new Point(46, 122);
-            label8.Name = "label8";
-            label8.Size = new Size(33, 21);
-            label8.TabIndex = 26;
-            label8.Text = "Rol";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            label9.Location = new Point(46, 162);
-            label9.Name = "label9";
-            label9.Size = new Size(95, 21);
-            label9.TabIndex = 27;
-            label9.Text = "Atama tarihi";
-            // 
-            // calisanbox
-            // 
-            calisanbox.FormattingEnabled = true;
-            calisanbox.Location = new Point(167, 40);
-            calisanbox.Name = "calisanbox";
-            calisanbox.Size = new Size(194, 23);
-            calisanbox.TabIndex = 28;
-            // 
-            // projebox
-            // 
-            projebox.FormattingEnabled = true;
-            projebox.Location = new Point(167, 80);
-            projebox.Name = "projebox";
-            projebox.Size = new Size(194, 23);
-            projebox.TabIndex = 29;
-            // 
-            // rolbox
-            // 
-            rolbox.FormattingEnabled = true;
-            rolbox.Location = new Point(167, 120);
-            rolbox.Name = "rolbox";
-            rolbox.Size = new Size(194, 23);
-            rolbox.TabIndex = 30;
-            // 
-            // atarihidate
-            // 
-            atarihidate.Location = new Point(167, 160);
-            atarihidate.Name = "atarihidate";
-            atarihidate.Size = new Size(194, 23);
-            atarihidate.TabIndex = 31;
-            // 
-            // projeatamabtn
-            // 
-            projeatamabtn.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            projeatamabtn.Location = new Point(167, 200);
-            projeatamabtn.Name = "projeatamabtn";
-            projeatamabtn.Size = new Size(194, 37);
-            projeatamabtn.TabIndex = 22;
-            projeatamabtn.Text = "Kaydet";
-            projeatamabtn.UseVisualStyleBackColor = true;
             // 
             // ProjelerEkrani
             // 

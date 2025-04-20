@@ -13,12 +13,12 @@ namespace IsYonetimSistemi
 {
     public partial class CalisanlarEkrani : Form
     {
+        private readonly CalisanlarRepository calisanRepo = new CalisanlarRepository();
 
-        private CalisanlarRepository repo;
+        
         public CalisanlarEkrani()
         {
-            InitializeComponent();
-            repo = new CalisanlarRepository();
+            InitializeComponent();  
             Pozisyoncombobox(pozisyonbox);
             CalisanVerileriYukle();
             PozisyonVerileriYukle();
@@ -27,7 +27,7 @@ namespace IsYonetimSistemi
 
         private void kaydetbtn_Click(object sender, EventArgs e)
         {
-            CalisanlarRepository repo = new CalisanlarRepository();
+            
 
             int cinsiyet = 0;
 
@@ -41,15 +41,15 @@ namespace IsYonetimSistemi
             }
 
 
-            repo.CalisanEkle(adtxtbox.Text, pozisyonbox.Text, maastext.Text, telefonbox.Text, datebox.Text, cinsiyet);
+            calisanRepo.CalisanEkle(adtxtbox.Text, pozisyonbox.Text, maastext.Text, telefonbox.Text, datebox.Text, cinsiyet);
 
             CalisanVerileriYukle();
-            //  TextBoxTemizle();
+           
             MessageBox.Show("Çalışan başarıyla eklendi!");
         }
         public void Pozisyoncombobox(ComboBox comboBox)
         {
-            DataTable dt = repo.PozisyonlariYukle();
+            DataTable dt = calisanRepo.PozisyonlariListele();
             pozisyonbox.Items.Clear();
 
             foreach (DataRow row in dt.Rows)
@@ -59,13 +59,13 @@ namespace IsYonetimSistemi
         }
         public void CalisanVerileriYukle()
         {
-            DataTable dt = repo.CalisanlariYukle();
+            DataTable dt = calisanRepo.CalisanlariListele();
             calisanlardata.DataSource = dt;
         }
 
         public void PozisyonVerileriYukle()
         {
-            DataTable dt = repo.PozisyonlariYukle();
+            DataTable dt = calisanRepo.PozisyonlariListele();
             pozisyonlardata.DataSource = dt;
         }
 
@@ -82,8 +82,8 @@ namespace IsYonetimSistemi
 
         private void pozisyonkaydet_Click(object sender, EventArgs e)
         {
-            CalisanlarRepository repo = new CalisanlarRepository();
-            repo.PozisyonEkle(pozisyonadıtxtbox.Text);
+
+            calisanRepo.PozisyonEkle(pozisyonadıtxtbox.Text);
             MessageBox.Show("Pozisyon başarıyla eklendi");
             PozisyonVerileriYukle();
             Pozisyoncombobox(pozisyonbox);
@@ -91,26 +91,12 @@ namespace IsYonetimSistemi
 
         private void calisanlardata_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
         }
 
         private void CalisanlarEkrani_Load(object sender, EventArgs e)
         {
-
-
-
         }
-        public void calisanlariYukle()
-        {
-            CalisanlarRepository repo = new CalisanlarRepository();
-            repo.CalisanlariYukle();
-        }
-        public void pozisyonlariYukle()
-        {
-            CalisanlarRepository repo = new CalisanlarRepository();
-            repo.PozisyonlariYukle();
-        }
-
+       
         private void geridonbtn_Click(object sender, EventArgs e)
         {
             this.Close();
