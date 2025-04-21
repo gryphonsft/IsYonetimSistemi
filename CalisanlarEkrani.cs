@@ -99,6 +99,8 @@ namespace IsYonetimSistemi
        
         private void geridonbtn_Click(object sender, EventArgs e)
         {
+            Form1 form = new Form1();
+            form.CalisanSayisiAl();
             this.Close();
         }
     }

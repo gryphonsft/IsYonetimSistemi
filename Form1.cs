@@ -108,7 +108,7 @@ namespace IsYonetimSistemi
         {
             Application.Exit();
         }
-        private void CalisanSayisiAl()
+        public void CalisanSayisiAl()
         {
 
             string connectionString = "Data Source=database.db;";

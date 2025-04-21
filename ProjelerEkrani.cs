@@ -45,16 +45,23 @@ namespace IsYonetimSistemi
         }
         private void projeeklebtn_Click(object sender, EventArgs e)
         {
-          
-            int? musteriID = musteribox.SelectedValue != null && musteribox.SelectedValue != DBNull.Value? (int?)musteribox.SelectedValue: null;
+            long? musteriID = (musteribox.SelectedValue != null && musteribox.SelectedValue != DBNull.Value)
+     ? Convert.ToInt64(musteribox.SelectedValue)
+     : (long?)null;
 
-            projelerRepository.ProjeEkle(projeaditxtbox.Text, aciklamatxtbox.Text, btarihidate.Text, bitistarihidate.Text, musteriID);
+            projelerRepository.ProjeEkle(projeaditxtbox.Text, aciklamatxtbox.Text, btarihidate.Text, bitistarihidate.Text, musteriID); 
+
             ProjeleriYukle();
             ProjeAtamalariniYukle();
+            ComboboxlarıYukle();
+   
             MessageBox.Show("Proje Başarıyla eklendi!");
+
         }
         private void geridonbtn_Click(object sender, EventArgs e)
         {
+            Form1 form = new Form1();
+            form.CalisanSayisiAl();
             this.Close();
         }
         public void ProjeleriYukle()
@@ -81,34 +88,31 @@ namespace IsYonetimSistemi
                 if (row.Cells["Musteriid"].Value != DBNull.Value && row.Cells["Musteriid"].Value != null)
                 {
 
-                    row.DefaultCellStyle.BackColor = Color.LightGreen;
+                    row.DefaultCellStyle.BackColor = Color.LightGray;
                 }
                 else
                 {
 
-                    row.DefaultCellStyle.BackColor = Color.LightGray;
+                    row.DefaultCellStyle.BackColor = Color.LightGreen;
                 }
             }
         }
         public void MusteriComboBoxVeri()
         {
             ProjelerRepository repo = new ProjelerRepository();
-            
             DataTable dt = repo.ComboBoxicinMusterileriGetir();
 
            
-            dt.Columns.Add("musterigosterim", typeof(string));
+            DataRow emptyRow = dt.NewRow();
+            emptyRow["id"] = DBNull.Value;  
+            emptyRow["ad"] = "Seçiniz (Şirket projesi)";    
+            dt.Rows.InsertAt(emptyRow, 0);  
 
-            foreach (DataRow row in dt.Rows)
-            {
-                row["musterigosterim"] = $"{row["ad"]}";  
-            }
+           
+            musteribox.DisplayMember = "ad";   
+            musteribox.ValueMember = "id";     
 
-         
-            musteribox.DisplayMember = "musterigosterim";  
-            musteribox.ValueMember = "id";  
-
-          
+           
             musteribox.DataSource = dt;
         }
 

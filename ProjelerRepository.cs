@@ -14,7 +14,7 @@ namespace IsYonetimSistemi
         
         
         //Proje durumunu raporlama sayfasında belirlemek.
-        public void ProjeEkle(string ProjeAdi, string Aciklama, string Bastarihi, string Bitistarihi,int? Musteriid) 
+        public void ProjeEkle(string ProjeAdi, string Aciklama, string Bastarihi, string Bitistarihi,long? Musteriid) 
         {
             string query = "INSERT INTO Projeler (ProjeAdi, Aciklama, Bastarihi, Bitistarihi, Musteriid) VALUES (@ProjeAdi, @Aciklama, @Bastarihi, @Bitistarihi, @Musteriid)";
 
