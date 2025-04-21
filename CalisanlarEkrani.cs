@@ -54,7 +54,7 @@ namespace IsYonetimSistemi
 
             foreach (DataRow row in dt.Rows)
             {
-                pozisyonbox.Items.Add(row["Pozisyonadi"].ToString());
+                pozisyonbox.Items.Add(row["Pozisyonadi"]);
             }
         }
         public void CalisanVerileriYukle()

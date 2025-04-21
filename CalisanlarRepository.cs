@@ -46,7 +46,7 @@ namespace IsYonetimSistemi
             {
                 connection.Open();
 
-                string sql = "SELECT adsoyad,pozisyon,maas,telefon,gtarih,cinsiyet FROM Calisanlar";
+                string sql = "SELECT id, adsoyad, pozisyon, maas, telefon, gtarih, cinsiyet FROM Calisanlar";
 
                 using (var command = new SqliteCommand(sql, connection))
                 using (var reader = command.ExecuteReader())
@@ -58,6 +58,8 @@ namespace IsYonetimSistemi
             }
             return dt;
         }
+        
+
         public DataTable PozisyonlariListele()
         {
             DataTable dt = new DataTable();
@@ -75,5 +77,41 @@ namespace IsYonetimSistemi
             }
             return dt;
         }
+        public DataTable RolleriListele()
+        {
+            DataTable dt = new DataTable();
+            using (var connection = new SqliteConnection("Data Source=database.db"))
+            {
+                connection.Open();
+                string sql = "SELECT id,roladi FROM Roller";
+                using (var command = new SqliteCommand(sql, connection))
+                using (var reader = command.ExecuteReader())
+                {
+                    dt.Load(reader);
+                }
+
+            }
+
+            return dt;
+        }
+
+        public DataTable ComboBoxicinCalisanlariGetir()
+        {
+            DataTable dt = new DataTable();
+
+            using (var connection = new SqliteConnection("Data Source=database.db"))
+            {
+                connection.Open();
+                string sql = "SELECT id, adsoyad, pozisyon FROM Calisanlar"; 
+                using (var command = new SqliteCommand(sql, connection))
+                using (var reader = command.ExecuteReader())
+                {
+                    dt.Load(reader);
+                }
+            }
+
+            return dt;
+        }
+
     }
 }

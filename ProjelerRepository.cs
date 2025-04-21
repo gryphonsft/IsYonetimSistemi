@@ -54,7 +54,76 @@ namespace IsYonetimSistemi
             }
             return dtt;
         }
-        
+        public DataTable ComboBoxicinProjeleriGetir()
+        {
+            DataTable dtt = new DataTable();
+            using (var connection = new SqliteConnection("Data Source=database.db"))
+            {
+                connection.Open();
+                string sql = "SELECT id,ProjeAdi,Aciklama,Bastarihi,Bitistarihi,Musteriid FROM Projeler";
+
+                using (var command = new SqliteCommand(sql,connection))
+                using (var reader = command.ExecuteReader())
+                {
+                    dtt.Load(reader);
+                }
+            }
+
+            return dtt;
+        }
+        public void ProjeAtamaEkle(int Calisanid,int Projeid,string Rol,string AtamaTarihi)
+        {
+            //Calisanid, Projeid, Rol, AtamaTarihi
+
+            string query = "INSERT INTO Projeatamasi (Calisanid,Projeid,Rol,AtamaTarihi) VALUES (@Calisanid,@Projeid,@Rol,@AtamaTarihi)";
+            _dbHelper.ExecuteQuery(query, cmd =>
+            {
+                cmd.Parameters.AddWithValue("@Calisanid", Calisanid);
+                cmd.Parameters.AddWithValue("@Projeid", Projeid);
+                cmd.Parameters.AddWithValue("@Rol", Rol);
+                cmd.Parameters.AddWithValue("@AtamaTarihi", AtamaTarihi);            
+            });
+
+        }
+        public DataTable ProjeAtamalariListele()
+        {
+            DataTable dtt = new DataTable();
+
+            using (var connection = new SqliteConnection("Data Source=database.db"))
+            {
+                connection.Open();
+
+                string query = @"SELECT pa.Calisanid, c.adsoyad, pa.Projeid, p.ProjeAdi, pa.Rol, pa.AtamaTarihi, p.Musteriid
+                         FROM Projeatamasi pa
+                         JOIN Calisanlar c ON pa.Calisanid = c.id
+                         JOIN Projeler p ON pa.Projeid = p.id";
+
+                using (var command = new SqliteCommand(query, connection))
+                using (var reader = command.ExecuteReader())
+                {
+                    dtt.Load(reader);
+                }
+            }
+            return dtt;
+        }
+
+        public DataTable ComboBoxicinMusterileriGetir()
+        {
+            DataTable dtt = new DataTable();
+            using (var connection = new SqliteConnection("Data Source=database.db"))
+            {
+                connection.Open();
+                string sql = "SELECT id,ad FROM Musteriler";
+
+                using (var command = new SqliteCommand(sql, connection))
+                using (var reader = command.ExecuteReader())
+                {
+                    dtt.Load(reader);
+                }
+            }
+
+            return dtt;
+        }
         public void ProjeSilme()
         {
             
@@ -63,6 +132,7 @@ namespace IsYonetimSistemi
         {
 
         }
+        
 
 
     }

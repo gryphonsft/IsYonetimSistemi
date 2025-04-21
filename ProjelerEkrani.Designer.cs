@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             panel3 = new Panel();
+            button2 = new Button();
+            button1 = new Button();
             geridonbtn = new Button();
             panel4 = new Panel();
             panel1 = new Panel();
+            musteribox = new ComboBox();
             projeaditxtbox = new TextBox();
             projeeklebtn = new Button();
-            musteriidtxtbox = new TextBox();
             bitistarihidate = new DateTimePicker();
             btarihidate = new DateTimePicker();
             aciklamatxtbox = new TextBox();
@@ -54,22 +56,54 @@
             label7 = new Label();
             label6 = new Label();
             projelerdata = new DataGridView();
-            dataGridView2 = new DataGridView();
+            atanmisprojelerdata = new DataGridView();
+            panel5 = new Panel();
+            panel6 = new Panel();
+            panel7 = new Panel();
+            panel8 = new Panel();
+            panel9 = new Panel();
             panel3.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)projelerdata).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)atanmisprojelerdata).BeginInit();
             SuspendLayout();
             // 
             // panel3
             // 
             panel3.BackgroundImage = Properties.Resources.sidepanel1;
+            panel3.Controls.Add(button2);
+            panel3.Controls.Add(button1);
             panel3.Controls.Add(geridonbtn);
             panel3.Location = new Point(0, 58);
             panel3.Name = "panel3";
             panel3.Size = new Size(183, 678);
             panel3.TabIndex = 18;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.Transparent;
+            button2.BackgroundImage = Properties.Resources.silbutton;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            button2.Location = new Point(35, 171);
+            button2.Name = "button2";
+            button2.Size = new Size(115, 40);
+            button2.TabIndex = 18;
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Transparent;
+            button1.BackgroundImage = Properties.Resources.duzenle;
+            button1.BackgroundImageLayout = ImageLayout.None;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            button1.Location = new Point(35, 91);
+            button1.Name = "button1";
+            button1.Size = new Size(115, 40);
+            button1.TabIndex = 17;
+            button1.UseVisualStyleBackColor = false;
             // 
             // geridonbtn
             // 
@@ -77,7 +111,7 @@
             geridonbtn.BackgroundImage = Properties.Resources.button;
             geridonbtn.FlatStyle = FlatStyle.Flat;
             geridonbtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            geridonbtn.Location = new Point(35, 87);
+            geridonbtn.Location = new Point(29, 613);
             geridonbtn.Name = "geridonbtn";
             geridonbtn.Size = new Size(115, 40);
             geridonbtn.TabIndex = 16;
@@ -97,9 +131,9 @@
             // panel1
             // 
             panel1.BackColor = Color.Silver;
+            panel1.Controls.Add(musteribox);
             panel1.Controls.Add(projeaditxtbox);
             panel1.Controls.Add(projeeklebtn);
-            panel1.Controls.Add(musteriidtxtbox);
             panel1.Controls.Add(bitistarihidate);
             panel1.Controls.Add(btarihidate);
             panel1.Controls.Add(aciklamatxtbox);
@@ -113,11 +147,19 @@
             panel1.Size = new Size(409, 294);
             panel1.TabIndex = 20;
             // 
+            // musteribox
+            // 
+            musteribox.FormattingEnabled = true;
+            musteribox.Location = new Point(167, 190);
+            musteribox.Name = "musteribox";
+            musteribox.Size = new Size(219, 23);
+            musteribox.TabIndex = 22;
+            // 
             // projeaditxtbox
             // 
             projeaditxtbox.Location = new Point(167, 30);
             projeaditxtbox.Name = "projeaditxtbox";
-            projeaditxtbox.Size = new Size(194, 23);
+            projeaditxtbox.Size = new Size(219, 23);
             projeaditxtbox.TabIndex = 21;
             // 
             // projeeklebtn
@@ -125,32 +167,24 @@
             projeeklebtn.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
             projeeklebtn.Location = new Point(167, 230);
             projeeklebtn.Name = "projeeklebtn";
-            projeeklebtn.Size = new Size(194, 37);
+            projeeklebtn.Size = new Size(219, 37);
             projeeklebtn.TabIndex = 20;
             projeeklebtn.Text = "Kaydet";
             projeeklebtn.UseVisualStyleBackColor = true;
             projeeklebtn.Click += projeeklebtn_Click;
             // 
-            // musteriidtxtbox
-            // 
-            musteriidtxtbox.Location = new Point(167, 190);
-            musteriidtxtbox.Multiline = true;
-            musteriidtxtbox.Name = "musteriidtxtbox";
-            musteriidtxtbox.Size = new Size(194, 21);
-            musteriidtxtbox.TabIndex = 18;
-            // 
             // bitistarihidate
             // 
             bitistarihidate.Location = new Point(167, 150);
             bitistarihidate.Name = "bitistarihidate";
-            bitistarihidate.Size = new Size(194, 23);
+            bitistarihidate.Size = new Size(219, 23);
             bitistarihidate.TabIndex = 17;
             // 
             // btarihidate
             // 
             btarihidate.Location = new Point(167, 110);
             btarihidate.Name = "btarihidate";
-            btarihidate.Size = new Size(194, 23);
+            btarihidate.Size = new Size(219, 23);
             btarihidate.TabIndex = 16;
             // 
             // aciklamatxtbox
@@ -158,7 +192,7 @@
             aciklamatxtbox.Location = new Point(167, 70);
             aciklamatxtbox.Multiline = true;
             aciklamatxtbox.Name = "aciklamatxtbox";
-            aciklamatxtbox.Size = new Size(194, 21);
+            aciklamatxtbox.Size = new Size(219, 21);
             aciklamatxtbox.TabIndex = 15;
             // 
             // label5
@@ -167,9 +201,9 @@
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
             label5.Location = new Point(45, 190);
             label5.Name = "label5";
-            label5.Size = new Size(80, 21);
+            label5.Size = new Size(88, 21);
             label5.TabIndex = 13;
-            label5.Text = "Müşteri id";
+            label5.Text = "Müşteri adı";
             // 
             // label4
             // 
@@ -233,16 +267,17 @@
             projeatamabtn.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
             projeatamabtn.Location = new Point(167, 200);
             projeatamabtn.Name = "projeatamabtn";
-            projeatamabtn.Size = new Size(194, 37);
+            projeatamabtn.Size = new Size(219, 37);
             projeatamabtn.TabIndex = 22;
             projeatamabtn.Text = "Kaydet";
             projeatamabtn.UseVisualStyleBackColor = true;
+            projeatamabtn.Click += projeatamabtn_Click;
             // 
             // atarihidate
             // 
             atarihidate.Location = new Point(167, 160);
             atarihidate.Name = "atarihidate";
-            atarihidate.Size = new Size(194, 23);
+            atarihidate.Size = new Size(219, 23);
             atarihidate.TabIndex = 31;
             // 
             // rolbox
@@ -250,7 +285,7 @@
             rolbox.FormattingEnabled = true;
             rolbox.Location = new Point(167, 120);
             rolbox.Name = "rolbox";
-            rolbox.Size = new Size(194, 23);
+            rolbox.Size = new Size(219, 23);
             rolbox.TabIndex = 30;
             // 
             // projebox
@@ -258,7 +293,7 @@
             projebox.FormattingEnabled = true;
             projebox.Location = new Point(167, 80);
             projebox.Name = "projebox";
-            projebox.Size = new Size(194, 23);
+            projebox.Size = new Size(219, 23);
             projebox.TabIndex = 29;
             // 
             // calisanbox
@@ -266,7 +301,7 @@
             calisanbox.FormattingEnabled = true;
             calisanbox.Location = new Point(167, 40);
             calisanbox.Name = "calisanbox";
-            calisanbox.Size = new Size(194, 23);
+            calisanbox.Size = new Size(219, 23);
             calisanbox.TabIndex = 28;
             // 
             // label9
@@ -317,20 +352,76 @@
             projelerdata.Size = new Size(645, 294);
             projelerdata.TabIndex = 22;
             // 
-            // dataGridView2
+            // atanmisprojelerdata
             // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(681, 482);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(645, 240);
-            dataGridView2.TabIndex = 23;
+            atanmisprojelerdata.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            atanmisprojelerdata.Location = new Point(681, 482);
+            atanmisprojelerdata.Name = "atanmisprojelerdata";
+            atanmisprojelerdata.Size = new Size(645, 240);
+            atanmisprojelerdata.TabIndex = 23;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.Transparent;
+            panel5.BackgroundImage = Properties.Resources.projeekleme;
+            panel5.BackgroundImageLayout = ImageLayout.None;
+            panel5.Location = new Point(256, 64);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(313, 53);
+            panel5.TabIndex = 24;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.Transparent;
+            panel6.BackgroundImage = Properties.Resources.projeatamasi;
+            panel6.BackgroundImageLayout = ImageLayout.None;
+            panel6.Location = new Point(259, 423);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(313, 53);
+            panel6.TabIndex = 25;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.Transparent;
+            panel7.BackgroundImage = Properties.Resources.projelistesi;
+            panel7.BackgroundImageLayout = ImageLayout.None;
+            panel7.Location = new Point(681, 64);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(313, 53);
+            panel7.TabIndex = 25;
+            // 
+            // panel8
+            // 
+            panel8.BackColor = Color.Transparent;
+            panel8.BackgroundImage = Properties.Resources.atamalistesi;
+            panel8.BackgroundImageLayout = ImageLayout.None;
+            panel8.Location = new Point(681, 423);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(313, 53);
+            panel8.TabIndex = 25;
+            // 
+            // panel9
+            // 
+            panel9.BackColor = Color.Transparent;
+            panel9.BackgroundImage = Properties.Resources.help;
+            panel9.BackgroundImageLayout = ImageLayout.Zoom;
+            panel9.Location = new Point(1011, 435);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(200, 41);
+            panel9.TabIndex = 26;
             // 
             // ProjelerEkrani
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(1338, 734);
-            Controls.Add(dataGridView2);
+            Controls.Add(panel9);
+            Controls.Add(panel8);
+            Controls.Add(panel7);
+            Controls.Add(panel6);
+            Controls.Add(panel5);
+            Controls.Add(atanmisprojelerdata);
             Controls.Add(projelerdata);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -347,7 +438,7 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)projelerdata).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)atanmisprojelerdata).EndInit();
             ResumeLayout(false);
         }
 
@@ -359,13 +450,12 @@
         private Panel panel1;
         private Panel panel2;
         private DataGridView projelerdata;
-        private DataGridView dataGridView2;
+        private DataGridView atanmisprojelerdata;
         private Label label5;
         private Label label4;
         private Label label3;
         private Label label2;
         private Label label1;
-        private TextBox musteriidtxtbox;
         private DateTimePicker bitistarihidate;
         private DateTimePicker btarihidate;
         private TextBox aciklamatxtbox;
@@ -380,5 +470,13 @@
         private ComboBox projebox;
         private ComboBox calisanbox;
         private Button projeatamabtn;
+        private Panel panel5;
+        private Panel panel6;
+        private Panel panel7;
+        private Panel panel8;
+        private Button button2;
+        private Button button1;
+        private Panel panel9;
+        private ComboBox musteribox;
     }
 }

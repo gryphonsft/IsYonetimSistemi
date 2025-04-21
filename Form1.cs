@@ -202,9 +202,10 @@ namespace IsYonetimSistemi
             public string? Description { get; set; }
         }
 
-       
+          
+        }
     }
 
-}
+
 
 

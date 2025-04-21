@@ -38,9 +38,11 @@
             havadurumu = new Label();
             pictureBox2 = new PictureBox();
             saveFileDialog1 = new SaveFileDialog();
+            panel2 = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -55,39 +57,39 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(171, 577);
+            panel1.Size = new Size(203, 577);
             panel1.TabIndex = 0;
             // 
             // projelerbtn
             // 
-            projelerbtn.BackColor = Color.White;
+            projelerbtn.BackColor = Color.Transparent;
+            projelerbtn.BackgroundImage = Properties.Resources.projelerr;
             projelerbtn.FlatStyle = FlatStyle.Flat;
             projelerbtn.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            projelerbtn.Location = new Point(3, 151);
+            projelerbtn.Location = new Point(12, 156);
             projelerbtn.Name = "projelerbtn";
             projelerbtn.Size = new Size(165, 44);
             projelerbtn.TabIndex = 7;
-            projelerbtn.Text = "Projeler";
             projelerbtn.UseVisualStyleBackColor = false;
             projelerbtn.Click += projelerbtn_Click;
             // 
             // exitbtn
             // 
-            exitbtn.BackColor = Color.White;
+            exitbtn.BackColor = Color.Transparent;
+            exitbtn.BackgroundImage = Properties.Resources.cikis;
             exitbtn.FlatStyle = FlatStyle.Flat;
             exitbtn.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            exitbtn.Location = new Point(3, 521);
+            exitbtn.Location = new Point(12, 521);
             exitbtn.Name = "exitbtn";
             exitbtn.Size = new Size(165, 44);
             exitbtn.TabIndex = 2;
-            exitbtn.Text = "Çıkış";
             exitbtn.UseVisualStyleBackColor = false;
             exitbtn.Click += exitbtn_Click;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.employee;
-            pictureBox1.Location = new Point(3, 0);
+            pictureBox1.Location = new Point(12, 9);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(36, 50);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -98,7 +100,7 @@
             // 
             calisansayisi.AutoSize = true;
             calisansayisi.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            calisansayisi.Location = new Point(134, 18);
+            calisansayisi.Location = new Point(153, 30);
             calisansayisi.Name = "calisansayisi";
             calisansayisi.Size = new Size(15, 17);
             calisansayisi.TabIndex = 0;
@@ -108,7 +110,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            label1.Location = new Point(45, 19);
+            label1.Location = new Point(54, 32);
             label1.Name = "label1";
             label1.Size = new Size(83, 15);
             label1.TabIndex = 4;
@@ -116,14 +118,14 @@
             // 
             // calisanlarbtn
             // 
-            calisanlarbtn.BackColor = Color.White;
+            calisanlarbtn.BackColor = Color.Transparent;
+            calisanlarbtn.BackgroundImage = Properties.Resources.calisanlar;
             calisanlarbtn.FlatStyle = FlatStyle.Flat;
             calisanlarbtn.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            calisanlarbtn.Location = new Point(3, 87);
+            calisanlarbtn.Location = new Point(12, 92);
             calisanlarbtn.Name = "calisanlarbtn";
             calisanlarbtn.Size = new Size(165, 44);
             calisanlarbtn.TabIndex = 0;
-            calisanlarbtn.Text = "Çalışanlar";
             calisanlarbtn.UseVisualStyleBackColor = false;
             calisanlarbtn.Click += calisanlarbtn_Click;
             // 
@@ -131,7 +133,8 @@
             // 
             havadurumu.AutoSize = true;
             havadurumu.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            havadurumu.Location = new Point(856, 9);
+            havadurumu.ForeColor = Color.White;
+            havadurumu.Location = new Point(672, 92);
             havadurumu.Name = "havadurumu";
             havadurumu.Size = new Size(12, 20);
             havadurumu.TabIndex = 5;
@@ -140,21 +143,34 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.cloudy;
-            pictureBox2.Location = new Point(805, 0);
+            pictureBox2.Location = new Point(672, 12);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(45, 63);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 7;
             pictureBox2.TabStop = false;
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.Transparent;
+            panel2.BackgroundImage = Properties.Resources.wallpaper4;
+            panel2.BackgroundImageLayout = ImageLayout.Stretch;
+            panel2.Controls.Add(havadurumu);
+            panel2.Controls.Add(pictureBox2);
+            panel2.Dock = DockStyle.Right;
+            panel2.Location = new Point(201, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(786, 577);
+            panel2.TabIndex = 1;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.FromArgb(237, 237, 237);
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(987, 577);
-            Controls.Add(pictureBox2);
-            Controls.Add(havadurumu);
+            Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
@@ -165,8 +181,9 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -181,5 +198,6 @@
         private PictureBox pictureBox2;
         private SaveFileDialog saveFileDialog1;
         private Button projelerbtn;
+        private Panel panel2;
     }
 }

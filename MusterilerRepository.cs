@@ -9,7 +9,7 @@ namespace IsYonetimSistemi
     internal class MusterilerRepository
     {
 
-        //DataTable ile Müüşteri Listeleme ekle.
+        //DataTable ile Müşteri Listeleme ekle.
 
         public void MusteriEkle()
         {

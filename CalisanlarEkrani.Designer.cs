@@ -49,21 +49,19 @@
             label7 = new Label();
             pozisyonadıtxtbox = new TextBox();
             pozisyonlardata = new DataGridView();
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
             geridonbtn = new Button();
             panel3 = new Panel();
+            button2 = new Button();
+            button1 = new Button();
             panel4 = new Panel();
+            panel7 = new Panel();
             panel5 = new Panel();
             panel6 = new Panel();
-            panel7 = new Panel();
             panel8 = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)calisanlardata).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pozisyonlardata).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel3.SuspendLayout();
             SuspendLayout();
             // 
@@ -281,33 +279,13 @@
             pozisyonlardata.Size = new Size(244, 240);
             pozisyonlardata.TabIndex = 3;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.employee;
-            pictureBox1.Location = new Point(614, 71);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(51, 47);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 7;
-            pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Properties.Resources.jobs;
-            pictureBox2.Location = new Point(614, 422);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(51, 59);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 8;
-            pictureBox2.TabStop = false;
-            // 
             // geridonbtn
             // 
             geridonbtn.BackColor = Color.Transparent;
             geridonbtn.BackgroundImage = Properties.Resources.button;
             geridonbtn.FlatStyle = FlatStyle.Flat;
             geridonbtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            geridonbtn.Location = new Point(35, 87);
+            geridonbtn.Location = new Point(29, 613);
             geridonbtn.Name = "geridonbtn";
             geridonbtn.Size = new Size(115, 40);
             geridonbtn.TabIndex = 16;
@@ -317,11 +295,38 @@
             // panel3
             // 
             panel3.BackgroundImage = Properties.Resources.sidepanel1;
+            panel3.Controls.Add(button2);
+            panel3.Controls.Add(button1);
             panel3.Controls.Add(geridonbtn);
             panel3.Location = new Point(0, 58);
             panel3.Name = "panel3";
             panel3.Size = new Size(183, 678);
             panel3.TabIndex = 17;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.Transparent;
+            button2.BackgroundImage = Properties.Resources.silbutton1;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            button2.Location = new Point(35, 171);
+            button2.Name = "button2";
+            button2.Size = new Size(115, 40);
+            button2.TabIndex = 19;
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Transparent;
+            button1.BackgroundImage = Properties.Resources.duzenle1;
+            button1.BackgroundImageLayout = ImageLayout.None;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            button1.Location = new Point(35, 91);
+            button1.Name = "button1";
+            button1.Size = new Size(115, 40);
+            button1.TabIndex = 18;
+            button1.UseVisualStyleBackColor = false;
             // 
             // panel4
             // 
@@ -333,11 +338,21 @@
             panel4.Size = new Size(1338, 58);
             panel4.TabIndex = 18;
             // 
+            // panel7
+            // 
+            panel7.BackColor = Color.Transparent;
+            panel7.BackgroundImage = Properties.Resources.calisanlistesilabel;
+            panel7.BackgroundImageLayout = ImageLayout.None;
+            panel7.Location = new Point(681, 64);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(313, 53);
+            panel7.TabIndex = 20;
+            // 
             // panel5
             // 
             panel5.BackColor = Color.Transparent;
             panel5.BackgroundImage = Properties.Resources.calisanlabel;
-            panel5.BackgroundImageLayout = ImageLayout.Center;
+            panel5.BackgroundImageLayout = ImageLayout.None;
             panel5.Location = new Point(256, 64);
             panel5.Name = "panel5";
             panel5.Size = new Size(313, 53);
@@ -347,27 +362,17 @@
             // 
             panel6.BackColor = Color.Transparent;
             panel6.BackgroundImage = Properties.Resources.pozisyonlabel;
-            panel6.BackgroundImageLayout = ImageLayout.Center;
+            panel6.BackgroundImageLayout = ImageLayout.None;
             panel6.Location = new Point(256, 422);
             panel6.Name = "panel6";
             panel6.Size = new Size(313, 54);
             panel6.TabIndex = 20;
             // 
-            // panel7
-            // 
-            panel7.BackColor = Color.Transparent;
-            panel7.BackgroundImage = Properties.Resources.calisanlistesilabel;
-            panel7.BackgroundImageLayout = ImageLayout.Center;
-            panel7.Location = new Point(681, 64);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(313, 53);
-            panel7.TabIndex = 20;
-            // 
             // panel8
             // 
             panel8.BackColor = Color.Transparent;
             panel8.BackgroundImage = Properties.Resources.pozisyonlistesilabel;
-            panel8.BackgroundImageLayout = ImageLayout.Center;
+            panel8.BackgroundImageLayout = ImageLayout.None;
             panel8.Location = new Point(681, 422);
             panel8.Name = "panel8";
             panel8.Size = new Size(244, 54);
@@ -385,12 +390,10 @@
             Controls.Add(panel5);
             Controls.Add(panel4);
             Controls.Add(panel3);
-            Controls.Add(pictureBox2);
             Controls.Add(pozisyonlardata);
             Controls.Add(panel2);
             Controls.Add(calisanlardata);
             Controls.Add(panel1);
-            Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "CalisanlarEkrani";
             StartPosition = FormStartPosition.CenterScreen;
@@ -402,8 +405,6 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pozisyonlardata).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel3.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -431,14 +432,14 @@
         private Label label7;
         private TextBox pozisyonadıtxtbox;
         private DataGridView pozisyonlardata;
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
         private Button geridonbtn;
         private Panel panel3;
         private Panel panel4;
+        private Button button1;
+        private Button button2;
+        private Panel panel7;
         private Panel panel5;
         private Panel panel6;
-        private Panel panel7;
         private Panel panel8;
     }
 }
